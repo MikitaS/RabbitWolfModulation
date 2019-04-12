@@ -9,6 +9,7 @@ public:
 	~simulation();//done
 	
 	int start();
+	
 private:
 	RabbitField * rabbits_;
 	int dayCounter_;

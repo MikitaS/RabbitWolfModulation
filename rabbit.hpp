@@ -6,6 +6,12 @@
 #define RABBIT_FIELD_SIZE 10
 
 #define POINTS_TO_BORN_RABBIT 3
+#define POINTS_FOR_DEATH_RABBIT 2
+#define POINTS_FOR_FOUND_FOOD_RABBIT 2
+
+#define AMOUNT_OF_CELLS_TO_SEARCH_RABBITS 10
+
+int myrandom();
 
 class RabbitField
 {
@@ -17,7 +23,8 @@ public:
 	void dump() const;//done
 	
 	void born();//done
-	void die();
+	void die();//done
+	void search();
 	
 private:
 	int rabbitPoints_;

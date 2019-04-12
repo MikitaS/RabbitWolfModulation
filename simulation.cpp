@@ -15,7 +15,20 @@ simulation::~simulation()
 
 int simulation::start()
 {
-	for(int i = 0; i < 200; i++)
-		rabbits_ -> born();
-	rabbits_ -> dump();
+	std::string answer;
+	srand(time(0));
+	
+	while(answer != "stop")
+	{
+		dayCounter_++;
+		
+		rabbits_ -> search();
+		
+		rabbits_ -> dump();
+		std::cout << "Days passed " << dayCounter_ << std::endl;
+	
+		std::cout << "write stop to finish simulation" << std::endl;
+		std::cin >> answer;
+	}
+	
 }
