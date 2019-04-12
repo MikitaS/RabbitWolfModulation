@@ -9,7 +9,6 @@ int myrandom()
 
 RabbitField::RabbitField(int rabbitAmount, int rabbitPoints) : rabbitCounter_(0), rabbitPoints_(rabbitPoints)
 {
-	//srand(time(0));
 	int i = 0, j = 0;
 	
 	for(; i < RABBIT_FIELD_SIZE; ++i)
@@ -53,7 +52,6 @@ int RabbitField::counter() const
 
 void RabbitField::born()
 {
-	//srand(time(0));
 	int i = 0;
 	int j = 0;
 	
@@ -82,7 +80,6 @@ void RabbitField::born()
 
 void RabbitField::die()
 {
-	//srand(time(0));
 	int i = 0;
 	int j = 0;
 		
@@ -108,13 +105,11 @@ void RabbitField::die()
 
 void RabbitField::search()
 {
-	//srand(time(0));
 	int i = 0;
 	int j = 0;
 	
 	for(int count = 0; count < AMOUNT_OF_CELLS_TO_SEARCH_RABBITS; ++count)
 	{
-		
 		i = myrandom() % RABBIT_FIELD_SIZE;
 		j = myrandom() % RABBIT_FIELD_SIZE;
 		
@@ -126,7 +121,17 @@ void RabbitField::search()
 		{
 			rabbitPoints_ += POINTS_FOR_FOUND_FOOD_RABBIT;
 		}
-		
-		
 	}
+}
+
+void RabbitField::feed()
+{
+	while(rabbitCounter_ * POINTS_TO_FEED_RABBIT > rabbitPoints_)
+	{
+		die();
+	}
+	
+	rabbitPoints_ -= rabbitCounter_ * POINTS_TO_FEED_RABBIT;
+	
+	return;
 }

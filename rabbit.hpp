@@ -3,15 +3,16 @@
 #define INIT_RABBITS_AMOUNT 30
 #define INIT_RABBITS_POINTS 20
 
-#define RABBIT_FIELD_SIZE 10
+#define RABBIT_FIELD_SIZE 15
 
 #define POINTS_TO_BORN_RABBIT 3
 #define POINTS_FOR_DEATH_RABBIT 2
 #define POINTS_FOR_FOUND_FOOD_RABBIT 2
+#define POINTS_TO_FEED_RABBIT 1
 
-#define AMOUNT_OF_CELLS_TO_SEARCH_RABBITS 10
+#define AMOUNT_OF_CELLS_TO_SEARCH_RABBITS 15
 
-int myrandom();
+int myrandom();//done
 
 class RabbitField
 {
@@ -24,7 +25,8 @@ public:
 	
 	void born();//done
 	void die();//done
-	void search();
+	void search();//done
+	void feed();//done
 	
 private:
 	int rabbitPoints_;

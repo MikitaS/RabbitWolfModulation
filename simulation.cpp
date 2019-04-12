@@ -23,6 +23,7 @@ int simulation::start()
 		dayCounter_++;
 		
 		rabbits_ -> search();
+		rabbits_ -> feed();
 		
 		rabbits_ -> dump();
 		std::cout << "Days passed " << dayCounter_ << std::endl;
