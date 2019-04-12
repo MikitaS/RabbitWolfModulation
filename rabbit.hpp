@@ -1,6 +1,6 @@
 #pragma once
 
-#define INIT_RABBITS_AMOUNT 30
+#define INIT_RABBITS_AMOUNT 1
 #define INIT_RABBITS_POINTS 20
 
 #define RABBIT_FIELD_SIZE 15
