@@ -33,7 +33,7 @@ RabbitField::RabbitField(int rabbitAmount, int rabbitPoints) : rabbitCounter_(0)
 
 void RabbitField::dump() const
 {
-	std::cout << "Current amount is " << rabbitCounter_ << "\nCurrent points is " << rabbitPoints_ << std::endl;
+	std::cout << "Rabbit amount is " << rabbitCounter_ << "\nRabbit points is " << rabbitPoints_ << std::endl;
 	
 	for(int i = 0; i < RABBIT_FIELD_SIZE; ++i)
 	{
@@ -135,3 +135,24 @@ void RabbitField::feed()
 	
 	return;
 }
+
+bool RabbitField::kill(int X, int Y)
+{
+	if(X > RABBIT_FIELD_SIZE || Y > RABBIT_FIELD_SIZE || X < 0 || Y < 0)
+	{
+		return false;
+	}
+	
+	if(field_[X][Y])
+	{
+		field_[X][Y] = false;
+		--rabbitCounter_;
+		return true;
+	}
+	else 
+	{
+		return false;
+	}
+}
+
+
